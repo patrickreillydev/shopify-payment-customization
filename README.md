@@ -1,6 +1,7 @@
 # Shopify Code Challenge - Checkout Extensibility
 
 Shopify Store: https://wad-test-store.myshopify.com/?_ab=0&_fd=0&_sc=1
+<br>
 Preview Link: https://nf3fycg0csqh3i64-89011585333.shopifypreview.com
 
 # Level 1 - Update Checkout Heading
