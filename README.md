@@ -5,11 +5,16 @@ Preview Link: https://nf3fycg0csqh3i64-89011585333.shopifypreview.com
 
 # Level 1 - Update Checkout Heading
 
-For the sake of simplicity I installed Shopify GraphiQL App on the development
-Query checkout profile
-Get id of published (In my case the only profile)
-Run mutation query checkoutBrandingUpsert
-And update the the headingLevel 1 and 2 and set the typography letter case to “UPPER”
+
+For the sake of simplicity
+<ul>
+  
+<li>I installed Shopify GraphiQL App on the development</li>
+<li>Query checkout profile</li>
+<li>Get id of published (In my case the only profile)</li>
+<li>Run mutation query checkoutBrandingUpsert</li>
+<li>And update the the headingLevel 1 and 2 and set the typography letter case to “UPPER”</li>
+</ul>
 
 # Level 2 - Conditionally Remove a Payment Option From Checkout
 
