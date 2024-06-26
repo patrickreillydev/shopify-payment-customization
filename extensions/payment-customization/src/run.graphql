@@ -1,0 +1,16 @@
+query RunInput {
+  cart {
+    deliverableLines {
+      id
+      merchandise {
+        ... on ProductVariant {
+          id
+        }
+      }
+    }
+  }
+  paymentMethods {
+    id
+    name
+  }
+}
