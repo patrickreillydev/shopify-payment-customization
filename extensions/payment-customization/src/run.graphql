@@ -5,6 +5,12 @@ query RunInput {
       merchandise {
         ... on ProductVariant {
           id
+          product {
+            metafield(namespace: "custom", key: "hide_afterpay") {
+              value
+              type
+            }
+          }
         }
       }
     }

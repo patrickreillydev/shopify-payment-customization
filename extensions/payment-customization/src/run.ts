@@ -7,7 +7,6 @@ const NO_CHANGES: FunctionRunResult = {
   operations: [],
 };
 
-
 /**
  * 
  * Hard coded for the sake of this example 
@@ -16,15 +15,35 @@ const NO_CHANGES: FunctionRunResult = {
  *
  */
 const HIDE_PAYMENT_METHOD = 'afterpay';
-const UNIQUE_PRODUCT_COUNT = 1
+
+interface merchandiseProductVariant {
+  product: {
+    metafield?: {
+      value?: string
+    };
+  }
+}
+interface afterPayDeliverableCartLine {
+  merchandise?: merchandiseProductVariant
+}
+
+/**
+ * Check product MetaField hide_afterpay boolean status to see if afterpay is available with this purchase involved.
+ * @param lines 
+ * @returns 
+ */
+const checkIfProductIsAfterPayApproved = (lines?: afterPayDeliverableCartLine[]) => {
+  if (!lines) return false
+  return !!lines?.find(l => (l?.merchandise as merchandiseProductVariant)?.product?.metafield?.value === 'true')
+}
 
 export function run(input: RunInput): FunctionRunResult {
 
   if (!input.cart || !input?.paymentMethods) {
     return NO_CHANGES;
   }
-
-  const hidePaymentMethod = input?.cart?.deliverableLines?.length > UNIQUE_PRODUCT_COUNT
+  const lines = input?.cart?.deliverableLines as afterPayDeliverableCartLine[]
+  const hidePaymentMethod = checkIfProductIsAfterPayApproved(lines)
   const paymentMethodToHide = input?.paymentMethods?.find(p => p?.name?.toLowerCase() === HIDE_PAYMENT_METHOD)
   if (hidePaymentMethod && paymentMethodToHide) {
     return {

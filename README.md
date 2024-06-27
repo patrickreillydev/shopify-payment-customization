@@ -6,8 +6,8 @@ Preview Link: https://nf3fycg0csqh3i64-89011585333.shopifypreview.com
 
 # Level 1 - Update Checkout Heading
 
-
 For the sake of simplicity
+
 <ul>
   
 <li>I installed Shopify GraphiQL App on the development</li>
@@ -24,6 +24,9 @@ I then created a `payment-customization` function type.
 
 The purpose the function is to only allow unique checkouts to have the `Afterpay` payment method. If the cart includes
 two or more items that are not the same then the payment method is removed.
+
+A metafield has been created at the Product level called `hide_afterpay` which is a `boolean` value.
+If the `hide_afterpay` is marked as `true` then the customer will no longer have the option of `afterpay` at the checkout.
 
 # Shopify App Template - None (app with extensions only)
 
